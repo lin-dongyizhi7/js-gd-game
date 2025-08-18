@@ -164,7 +164,7 @@
 		"key": "kafuka",
 		"id": "sr-kafuka",
 		"name": "卡芙卡",
-		"avatar": "/avatars/starrail/kafuka.png",
+		"avatar": "/avatars/starrail/kafka.png",
 		"model": "/models/starrail/kafka.glb",
 		"stats": {
 			"maxHp": 98,
