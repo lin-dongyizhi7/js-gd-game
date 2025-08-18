@@ -1,0 +1,362 @@
+[
+	{
+		"game": "genshin",
+		"key": "hutao",
+		"id": "gs-hutao",
+		"name": "胡桃",
+		"avatar": "/avatars/genshin/hutao.png",
+		"model": "/models/genshin/hutao.glb",
+		"stats": {
+			"maxHp": 100,
+			"attack": 14,
+			"defense": 1,
+			"moveSpeed": 0.14,
+			"jumpPower": 5.0,
+			"specialChargeMax": 100
+		},
+		"passives": [
+			{
+				"key": "charge_gain_up",
+				"name": "蝶引",
+				"description": "攻击充能提升"
+			}
+		],
+		"skills": [
+			{
+				"key": "skill",
+				"name": "往生秘仪·蝶引来生",
+				"description": "消耗部分生命值，进入灵体状态提升攻击并造成 pyro 伤害"
+			},
+			{
+				"key": "ultimate",
+				"name": "魂炎·座敷牢",
+				"description": "召唤巨大魂火爆发，对范围内敌人造成巨额 pyro 伤害"
+			},
+			{
+				"key": "charged_attack",
+				"name": "重击",
+				"description": "长按攻击蓄力，释放后挥出火焰连斩，造成200% pyro 伤害；若自身生命值低于50%，重击伤害提升20%"
+			}
+		]
+	},
+	{
+		"game": "genshin",
+		"key": "raiden",
+		"id": "gs-raiden",
+		"name": "雷电将军",
+		"avatar": "/avatars/genshin/raiden.png",
+		"model": "/models/genshin/raiden.glb",
+		"stats": {
+			"maxHp": 105,
+			"attack": 13,
+			"defense": 2,
+			"moveSpeed": 0.14,
+			"jumpPower": 4.8,
+			"specialChargeMax": 120
+		},
+		"passives": [
+			{
+				"key": "charge_gain_up",
+				"name": "神变",
+				"description": "能量上限与获取提升"
+			}
+		],
+		"skills": [
+			{
+				"key": "skill",
+				"name": "神变·恶曜开眼",
+				"description": "展开领域，提升自身及队友攻击并造成 electro 伤害"
+			},
+			{
+				"key": "ultimate",
+				"name": "奥义·梦想真说",
+				"description": "拔出梦想一心，释放积攒的雷光造成大范围 electro 伤害"
+			},
+			{
+				"key": "charged_attack",
+				"name": "重击",
+				"description": "蓄力斩出雷鸣斩击，对前方扇形区域造成180% electro 伤害；命中后本次能量获取提高20%，持续2秒"
+			}
+		]
+	},
+	{
+		"game": "genshin",
+		"key": "keqing",
+		"id": "gs-keqing",
+		"name": "刻晴",
+		"avatar": "/avatars/genshin/keqing.png",
+		"model": "/models/genshin/keqing.glb",
+		"stats": {
+			"maxHp": 98,
+			"attack": 13,
+			"defense": 2,
+			"moveSpeed": 0.16,
+			"jumpPower": 5.2,
+			"specialChargeMax": 100
+		},
+		"passives": [
+			{
+				"key": "move_speed_up",
+				"name": "雷影步",
+				"description": "移动速度提升"
+			}
+		],
+		"skills": [
+			{
+				"key": "skill",
+				"name": "星斗归位",
+				"description": "投掷雷楔并瞬移至目标位置，造成 electro 伤害"
+			},
+			{
+				"key": "ultimate",
+				"name": "天街巡游",
+				"description": "召唤雷罚领域，持续对范围内敌人造成 electro 伤害"
+			},
+			{
+				"key": "charged_attack",
+				"name": "重击",
+				"description": "短暂蓄力后瞬身斩，对路径上的敌人造成2段各100% electro 伤害；若目标带有雷楔标记，额外造成50% electro 伤害"
+			}
+		]
+	},
+	{
+		"game": "genshin",
+		"key": "furina",
+		"id": "gs-furina",
+		"name": "芙宁娜",
+		"avatar": "/avatars/genshin/furina.png",
+		"model": "/models/genshin/furina.glb",
+		"stats": {
+			"maxHp": 102,
+			"attack": 12,
+			"defense": 2,
+			"moveSpeed": 0.13,
+			"jumpPower": 4.9,
+			"specialChargeMax": 130
+		},
+		"passives": [
+			{
+				"key": "charge_gain_up",
+				"name": "众水之愿",
+				"description": "能量获取提升"
+			}
+		],
+		"skills": [
+			{
+				"key": "skill",
+				"name": "水中幻愿",
+				"description": "切换生命值形态，造成 hydro 伤害并附加特殊效果"
+			},
+			{
+				"key": "ultimate",
+				"name": "盛大谢幕",
+				"description": "引发水之洪流，对全场敌人造成巨额 hydro 伤害并恢复能量"
+			},
+			{
+				"key": "charged_attack",
+				"name": "重击",
+				"description": "蓄力释放水刃，对前方直线敌人造成190% hydro 伤害；处于高生命形态时，额外回复5点能量"
+			}
+		]
+	},
+	{
+		"game": "genshin",
+		"key": "mavuika",
+		"id": "gs-mavuika",
+		"name": "玛薇卡",
+		"avatar": "/avatars/genshin/mavuika.png",
+		"model": "/models/genshin/mavuika.glb",
+		"stats": {
+			"maxHp": 120,
+			"attack": 11,
+			"defense": 3,
+			"moveSpeed": 0.12,
+			"jumpPower": 4.6,
+			"specialChargeMax": 100
+		},
+		"passives": [
+			{
+				"key": "attack_regen_up",
+				"name": "炽焰燃烧",
+				"description": "每秒提升少量攻击力直至上限"
+			}
+		],
+		"skills": [
+			{
+				"key": "skill",
+				"name": "焚曜之环",
+				"description": "召唤火环，对周围造成 pyro 伤害"
+			},
+			{
+				"key": "ultimate",
+				"name": "聆听太阳的轰鸣",
+				"description": "跳至空中向下发动攻击，引发大范围地震，对敌人造成持续 pyro 伤害并击飞"
+			},
+			{
+				"key": "charged_attack",
+				"name": "重击",
+				"description": "蓄力挥击，向前劈出火焰，造成170% pyro 伤害并施加3秒灼烧（每秒造成20% pyro 伤害）"
+			}
+		]
+	},
+	{
+		"game": "genshin",
+		"key": "noelle",
+		"id": "gs-noelle",
+		"name": "诺艾尔",
+		"avatar": "/avatars/genshin/noelle.png",
+		"model": "/models/genshin/noelle.glb",
+		"stats": {
+			"maxHp": 135,
+			"attack": 10,
+			"defense": 5,
+			"moveSpeed": 0.11,
+			"jumpPower": 4.4,
+			"specialChargeMax": 100
+		},
+		"passives": [
+			{
+				"key": "defense_up",
+				"name": "守护之力",
+				"description": "防御提升"
+			}
+		],
+		"skills": [
+			{
+				"key": "skill",
+				"name": "坚定之心",
+				"description": "举起盾牌防御，成功格挡后反击造成 geo 伤害"
+			},
+			{
+				"key": "ultimate",
+				"name": "西风骑士的荣耀",
+				"description": "挥舞巨斧旋转攻击，对范围内敌人造成多次 geo 伤害并恢复队友生命值"
+			},
+			{
+				"key": "charged_attack",
+				"name": "重击",
+				"description": "持续蓄力旋转挥击，对周围敌人造成连续 geo 伤害并在结束时获得一层护体护盾（吸收等同10%最大生命值的伤害，持续3秒）"
+			}
+		]
+	},
+	{
+		"game": "genshin",
+		"key": "xiao",
+		"id": "gs-xiao",
+		"name": "魈",
+		"avatar": "/avatars/genshin/xiao.png",
+		"model": "/models/genshin/xiao.glb",
+		"stats": {
+			"maxHp": 96,
+			"attack": 15,
+			"defense": 1,
+			"moveSpeed": 0.16,
+			"jumpPower": 5.4,
+			"specialChargeMax": 120
+		},
+		"passives": [
+			{
+				"key": "attack_damage_up",
+				"name": "降魔·平妖",
+				"description": "空中攻击伤害提升"
+			}
+		],
+		"skills": [
+			{
+				"key": "skill",
+				"name": "风灵疾突",
+				"description": "快速冲刺并对路径敌人造成 anemo 伤害，可连续使用"
+			},
+			{
+				"key": "ultimate",
+				"name": "靖妖傩舞",
+				"description": "进入降魔形态，大幅提升攻击并以风元素撕裂敌人"
+			},
+			{
+				"key": "charged_attack",
+				"name": "重击",
+				"description": "短暂蓄力向前突刺，造成160% anemo 伤害；若在空中释放，随后下落攻击额外造成100% anemo 伤害"
+			}
+		]
+	},
+	{
+		"game": "genshin",
+		"key": "skirk",
+		"id": "gs-skirk",
+		"name": "丝柯克",
+		"avatar": "/avatars/genshin/skirk.png",
+		"model": "/models/genshin/skirk.glb",
+		"stats": {
+			"maxHp": 101,
+			"attack": 14,
+			"defense": 2,
+			"moveSpeed": 0.15,
+			"jumpPower": 5.0,
+			"specialChargeMax": 110
+		},
+		"passives": [
+			{
+				"key": "critical_up",
+				"name": "深渊之噬",
+				"description": "暴击率提升"
+			}
+		],
+		"skills": [
+			{
+				"key": "skill",
+				"name": "暗影突刺",
+				"description": "闪现至敌人身后发动突袭，造成冰霜伤害"
+			},
+			{
+				"key": "ultimate",
+				"name": "深渊降临",
+				"description": "召唤深渊能量爆发，对大范围敌人造成持续冰霜与暗影伤害"
+			},
+			{
+				"key": "charged_attack",
+				"name": "重击",
+				"description": "蓄力贯穿突刺，造成200% 冰霜伤害；若本次攻击造成暴击，则在4秒内提升自身10%暴击率"
+			}
+		]
+	},
+	{
+		"game": "genshin",
+		"key": "arlecchino",
+		"id": "gs-arlecchino",
+		"name": "仆人",
+		"avatar": "/avatars/genshin/arlecchino.png",
+		"model": "/models/genshin/arlecchino.glb",
+		"stats": {
+			"maxHp": 108,
+			"attack": 14,
+			"defense": 2,
+			"moveSpeed": 0.14,
+			"jumpPower": 4.9,
+			"specialChargeMax": 120
+		},
+		"passives": [
+			{
+				"key": "fire_damage_up",
+				"name": "炎之执炬",
+				"description": " pyro 伤害提升"
+			}
+		],
+		"skills": [
+			{
+				"key": "skill",
+				"name": "炼狱之拥",
+				"description": "释放火焰冲击波，造成 pyro 伤害并附加灼烧效果"
+			},
+			{
+				"key": "ultimate",
+				"name": "烬火燎原",
+				"description": "召唤炼狱之火席卷战场，对所有敌人造成巨额 pyro 伤害"
+			},
+			{
+				"key": "charged_attack",
+				"name": "重击",
+				"description": "蓄力后以炽火重斩造成210% pyro 伤害，并使目标在3秒内受到的 pyro 伤害提升15%"
+			}
+		]
+	}
+]

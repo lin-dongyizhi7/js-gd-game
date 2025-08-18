@@ -1,5 +1,5 @@
 import { Group, Object3D, Vector3 } from 'three'
-import type { CharacterStats, InputState, UpdateContext } from '../types'
+import type { CharacterStats, InputState, UpdateContext, PassiveSkill } from '../types'
 
 export type CharacterAction = 'idle' | 'run' | 'jump' | 'attackLight' | 'attackHeavy' | 'skill' | 'ultimate' | 'hit' | 'dead'
 
@@ -8,6 +8,7 @@ export interface CharacterOptions {
   stats: CharacterStats
   teamId: number
   spawnPosition?: Vector3
+  passives?: PassiveSkill[]
 }
 
 export class Character {
@@ -19,6 +20,7 @@ export class Character {
   public grounded: boolean
   public currentAction: CharacterAction
   public facing: 1 | -1
+  public passives: PassiveSkill[]
 
   constructor(options: CharacterOptions) {
     this.name = options.name
@@ -29,6 +31,7 @@ export class Character {
     this.grounded = true
     this.currentAction = 'idle'
     this.facing = 1
+    this.passives = options.passives ?? []
 
     const spawn = options.spawnPosition ?? new Vector3(0, 0, 0)
     this.object.position.copy(spawn)
@@ -51,8 +54,10 @@ export class Character {
 
   private performAttack(base: number, action: CharacterAction) {
     this.currentAction = action
-    // 充能（用于技能/大招）
-    this.stats.specialCharge = Math.min(this.stats.specialChargeMax, this.stats.specialCharge + 10)
+    // 充能（用于技能/大招），被动影响获取量
+    let gain = 10
+    if (this.hasPassive('charge_gain_up')) gain += 5
+    this.stats.specialCharge = Math.min(this.stats.specialChargeMax, this.stats.specialCharge + gain)
     return base
   }
 
@@ -116,6 +121,10 @@ export class Character {
         if (this.currentAction === 'jump') this.currentAction = 'idle'
       }
     }
+  }
+
+  private hasPassive(key: string): boolean {
+    return this.passives.some(p => p.key === key)
   }
 }
 

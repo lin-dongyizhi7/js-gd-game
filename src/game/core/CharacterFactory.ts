@@ -1,5 +1,6 @@
 import { Vector3 } from 'three'
-import type { CharacterKey, CharacterStats } from '../types'
+import type { CharacterKey, CharacterStats, PassiveSkill } from '../types'
+import { findByKey } from '../config'
 import { Character } from './Character'
 
 const base: CharacterStats = {
@@ -14,22 +15,38 @@ const base: CharacterStats = {
 }
 
 function statsFor(key: CharacterKey): CharacterStats {
-  switch (key) {
-    case 'ninja':
-      return { ...base, hp: 90, maxHp: 90, attack: 9, moveSpeed: 0.16, jumpPower: 5.2 }
-    case 'knight':
-      return { ...base, hp: 130, maxHp: 130, attack: 12, defense: 4, moveSpeed: 0.10, jumpPower: 4.2 }
-    case 'mage':
-      return { ...base, hp: 100, maxHp: 100, attack: 11, defense: 1, moveSpeed: 0.12, jumpPower: 4.8, specialChargeMax: 120 }
-    case 'cpu':
-    default:
-      return { ...base }
+  const cfg = findByKey(key)
+  if (cfg) {
+    return {
+      maxHp: cfg.stats.maxHp,
+      hp: cfg.stats.maxHp,
+      attack: cfg.stats.attack,
+      defense: cfg.stats.defense,
+      moveSpeed: cfg.stats.moveSpeed,
+      jumpPower: cfg.stats.jumpPower,
+      specialCharge: 0,
+      specialChargeMax: cfg.stats.specialChargeMax ?? 100,
+    }
   }
+  return { ...base }
+}
+
+function passivesFor(key: CharacterKey): PassiveSkill[] {
+  const cfg = findByKey(key)
+  return cfg?.passives ?? []
 }
 
 export function createCharacter(key: CharacterKey, teamId: number, spawn: Vector3): Character {
   const stats = statsFor(key)
-  const c = new Character({ name: key, stats, teamId, spawnPosition: spawn })
+  const passives = passivesFor(key)
+  const c = new Character({ name: key, stats, teamId, spawnPosition: spawn, passives })
+  // 简单被动即时生效
+  if (passives.some(p => p.key === 'move_speed_up')) {
+    c.stats.moveSpeed *= 1.1
+  }
+  if (passives.some(p => p.key === 'defense_up')) {
+    c.stats.defense += 1
+  }
   return c
 }
 

@@ -2,7 +2,7 @@ export type GameMode = 'solo' | 'pvp'
 
 export type SceneKey = 'dojo' | 'city' | 'forest'
 
-export type CharacterKey = 'ninja' | 'knight' | 'mage' | 'cpu'
+export type CharacterKey = string
 
 export interface CharacterStats {
   maxHp: number
@@ -13,6 +13,12 @@ export interface CharacterStats {
   jumpPower: number
   specialCharge: number
   specialChargeMax: number
+}
+
+export interface PassiveSkill {
+  key: string
+  name: string
+  description: string
 }
 
 export interface InputState {

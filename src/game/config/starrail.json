@@ -1,0 +1,282 @@
+[
+	{
+		"game": "starrail",
+		"key": "danheng",
+		"id": "sr-danheng",
+		"name": "丹恒",
+		"avatar": "/avatars/starrail/danheng.png",
+		"model": "/models/starrail/danheng.glb",
+		"stats": {
+			"maxHp": 95,
+			"attack": 12,
+			"defense": 2,
+			"moveSpeed": 0.14,
+			"jumpPower": 5.0,
+			"specialChargeMax": 100
+		},
+		"passives": [
+			{
+				"key": "charge_gain_up",
+				"name": "破阵",
+				"description": "攻击命中敌人后额外获取3点能量；对处于风元素影响下的敌人造成伤害时，额外获取2点能量"
+			}
+		],
+		"skills": [
+			{
+				"key": "skill",
+				"name": "渡风一击",
+				"description": "消耗2点能量，快速突刺对路径上敌人造成130%风元素伤害，命中后使目标移动速度降低20%，持续2秒"
+			},
+			{
+				"key": "ultimate",
+				"name": "天矛",
+				"description": "消耗100点能量，释放风矛对单个敌人造成300%风元素伤害，若目标处于减速状态，伤害提升20%"
+			},
+			{
+				"key": "charged_attack",
+				"name": "疾风贯穿",
+				"description": "短暂蓄力后突刺穿透直线上的敌人，造成200%风元素伤害；若目标处于减速状态，本次伤害提高25%"
+			}
+		]
+	},
+	{
+		"game": "starrail",
+		"key": "march7",
+		"id": "sr-march7",
+		"name": "三月七",
+		"avatar": "/avatars/starrail/march7.png",
+		"model": "/models/starrail/march7.glb",
+		"stats": {
+			"maxHp": 110,
+			"attack": 9,
+			"defense": 4,
+			"moveSpeed": 0.12,
+			"jumpPower": 4.6,
+			"specialChargeMax": 100
+		},
+		"passives": [
+			{
+				"key": "shield_on_jump",
+				"name": "冰棱守护",
+				"description": "跳跃落地后为自身生成吸收15%最大生命值的冰元素护盾，持续3秒，护盾存在时提升自身10%防御力"
+			}
+		],
+		"skills": [
+			{
+				"key": "skill",
+				"name": "冻结屏障",
+				"description": "消耗3点能量，为指定队友生成吸收20%目标最大生命值的冰元素护盾，持续5秒，护盾存在时使目标受到的伤害降低10%"
+			},
+			{
+				"key": "ultimate",
+				"name": "全域冻结",
+				"description": "消耗100点能量，对范围内所有敌人造成150%冰元素伤害，有30%概率使目标冻结1.5秒，同时为全队生成吸收10%最大生命值的冰元素护盾"
+			},
+			{
+				"key": "charged_attack",
+				"name": "霜星蓄能",
+				"description": "蓄力发射霜晶箭，对单体造成190%冰元素伤害；若命中时自身拥有护盾，则额外使目标减速20%，持续2秒"
+			}
+		]
+	},
+	{
+		"game": "starrail",
+		"key": "huangquan",
+		"id": "sr-huangquan",
+		"name": "黄泉",
+		"avatar": "/avatars/starrail/huangquan.png",
+		"model": "/models/starrail/huangquan.glb",
+		"stats": {
+			"maxHp": 100,
+			"attack": 15,
+			"defense": 2,
+			"moveSpeed": 0.15,
+			"jumpPower": 5.2,
+			"specialChargeMax": 120
+		},
+		"passives": [
+			{
+				"key": "crit_damage_up",
+				"name": "幽冥裁决",
+				"description": "对生命值低于50%的敌人，暴击伤害提升30%"
+			}
+		],
+		"skills": [
+			{
+				"key": "skill",
+				"name": "黄泉引渡",
+				"description": "消耗4点能量，对单个敌人造成200%雷元素伤害，命中后附加「幽冥标记」，持续4秒，标记期间目标受到的雷元素伤害提升15%"
+			},
+			{
+				"key": "ultimate",
+				"name": "万魂寂灭",
+				"description": "消耗120点能量，对目标敌人造成5段共400%雷元素伤害，若目标带有「幽冥标记」，则最后一段伤害额外提升50%"
+			},
+			{
+				"key": "charged_attack",
+				"name": "冥河断绝",
+				"description": "蓄力斩击，对单体造成220%雷元素伤害；若目标带有「幽冥标记」，本次伤害额外提高30%"
+			}
+		]
+	},
+	{
+		"game": "starrail",
+		"key": "xiadie",
+		"id": "sr-xiadie",
+		"name": "遐蝶",
+		"avatar": "/avatars/starrail/xiadie.png",
+		"model": "/models/starrail/xiadie.glb",
+		"stats": {
+			"maxHp": 95,
+			"attack": 12,
+			"defense": 2,
+			"moveSpeed": 0.16,
+			"jumpPower": 5.0,
+			"specialChargeMax": 110
+		},
+		"passives": [
+			{
+				"key": "quantum_aura",
+				"name": "量子花雾",
+				"description": "以自身为中心半径4米的范围内敌人每秒受到30%量子元素伤害的持续伤害"
+			}
+		],
+		"skills": [
+			{
+				"key": "skill",
+				"name": "量子花粉",
+				"description": "消耗自身10%最大生命值并消耗2点能量，对范围内敌人造成120%量子元素伤害，施加「量缚」效果，使目标攻击速度降低15%，持续3秒"
+			},
+			{
+				"key": "ultimate",
+				"name": "百蝶穿花",
+				"description": "消耗自身20%最大生命值并消耗110点能量，对范围内所有敌人造成250%量子元素伤害，同时为全队附加「量跃」效果，提升10%攻击力，持续4秒"
+			},
+			{
+				"key": "charged_attack",
+				"name": "量子蝶舞",
+				"description": "消耗自身5%最大生命值，原地短暂蓄力后旋转起舞，对周围造成连续量子元素伤害，合计180%；若命中2名及以上敌人，为自身提供8%移动速度，持续3秒"
+			}
+		]
+	},
+	{
+		"game": "starrail",
+		"key": "kafuka",
+		"id": "sr-kafuka",
+		"name": "卡芙卡",
+		"avatar": "/avatars/starrail/kafuka.png",
+		"model": "/models/starrail/kafka.glb",
+		"stats": {
+			"maxHp": 98,
+			"attack": 14,
+			"defense": 2,
+			"moveSpeed": 0.14,
+			"jumpPower": 4.8,
+			"specialChargeMax": 120
+		},
+		"passives": [
+			{
+				"key": "electro_dot_enhance",
+				"name": "触电共鸣",
+				"description": "由自身施加的「触电」效果造成的伤害提升25%"
+			}
+		],
+		"skills": [
+			{
+				"key": "skill",
+				"name": "月光摩挲连绵",
+				"description": "消耗3点能量，对单个敌人造成180%雷元素伤害，附加「触电」效果，每2秒造成50%雷元素伤害，持续6秒"
+			},
+			{
+				"key": "ultimate",
+				"name": "悲剧尽头的颤音",
+				"description": "消耗120点能量，对所有带有「触电」效果的敌人造成220%雷元素伤害，并引爆触电效果，额外造成一次相当于剩余持续伤害总量50%的雷元素伤害"
+			},
+			{
+				"key": "charged_attack",
+				"name": "温柔亦同残酷",
+				"description": "蓄力释放雷场，对小范围内敌人造成200%雷元素伤害；若目标带有「触电」，引爆造成额外100%雷元素伤害"
+			}
+		]
+	},
+	{
+		"game": "starrail",
+		"key": "jingliu",
+		"id": "sr-jingliu",
+		"name": "镜流",
+		"avatar": "/avatars/starrail/jingliu.png",
+		"model": "/models/starrail/jingliu.glb",
+		"stats": {
+			"maxHp": 110,
+			"attack": 13,
+			"defense": 3,
+			"moveSpeed": 0.13,
+			"jumpPower": 4.9,
+			"specialChargeMax": 100
+		},
+		"passives": [
+			{
+				"key": "ice_surge",
+				"name": "霜天剑心",
+				"description": "处于「剑出无尘」状态时，暴击率提升15%，造成的冰元素伤害提升20%"
+			}
+		],
+		"skills": [
+			{
+				"key": "skill",
+				"name": "裂冰刺",
+				"description": "消耗3点能量，对单个敌人造成210%冰元素伤害，有50%概率使目标「冻伤」，每3秒受到30%冰元素伤害，持续5秒"
+			},
+			{
+				"key": "ultimate",
+				"name": "剑出无尘",
+				"description": "消耗100点能量，进入「剑出无尘」状态，持续8秒，期间普通攻击变为范围伤害，造成150%冰元素伤害，技能冷却时间缩短30%"
+			},
+			{
+				"key": "charged_attack",
+				"name": "霜裂蓄锋",
+				"description": "蓄力斩击，对前方造成220%冰元素伤害；若处于「剑出无尘」状态，本次伤害额外提高25%"
+			}
+		]
+	},
+	{
+		"game": "starrail",
+		"key": "wandi",
+		"id": "sr-wandi",
+		"name": "万敌",
+		"avatar": "/avatars/starrail/wandi.png",
+		"model": "/models/starrail/wandi.glb",
+		"stats": {
+			"maxHp": 102,
+			"attack": 15,
+			"defense": 2,
+			"moveSpeed": 0.15,
+			"jumpPower": 5.1,
+			"specialChargeMax": 120
+		},
+		"passives": [
+			{
+				"key": "multi_kill_buff",
+				"name": "破敌之势",
+				"description": "单次攻击命中2名及以上敌人时，自身攻击提升10%，持续4秒，可叠加2层"
+			}
+		],
+		"skills": [
+			{
+				"key": "skill",
+				"name": "万夫莫当",
+				"description": "消耗4点能量，对范围内所有敌人造成180%物理伤害，降低目标10%防御力，持续3秒"
+			},
+			{
+				"key": "ultimate",
+				"name": "破阵斩",
+				"description": "消耗120点能量，对单个目标造成450%物理伤害，若目标防御力被降低，额外造成150%物理伤害"
+			},
+			{
+				"key": "charged_attack",
+				"name": "破阵横扫",
+				"description": "蓄力后施展大范围横扫，对扇形区域造成220%物理伤害，并击退轻型敌人；命中2名及以上敌人时，自身攻击再提升10%，持续3秒"
+			}
+		]
+	}
+]
