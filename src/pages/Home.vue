@@ -15,7 +15,7 @@ function goMode() {
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 .start-page {
   height: 100%;
   width: 100%;
@@ -23,15 +23,18 @@ function goMode() {
   display: grid;
   place-items: center;
 }
+
 .center {
   text-align: center;
   background: rgba(0, 0, 0, 0.35);
   padding: 24px 32px;
   border-radius: 12px;
 }
+
 h1 {
   margin: 0 0 16px;
 }
+
 .primary {
   font-size: 18px;
   padding: 10px 20px;

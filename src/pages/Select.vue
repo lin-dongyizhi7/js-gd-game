@@ -7,8 +7,8 @@
     </div>
     <div class="side">
       <h3>{{ leftTitle }}</h3>
-      <div class="preview" v-if="leftChoice">
-        <CharacterPreview :name="leftChoice" :model="getModel(leftChoice)" />
+      <div class="preview">
+        <CharacterPreview :name="leftChoice || '未选择'" :model="getModel(leftChoice)" />
       </div>
       <button class="confirm" :disabled="!leftChoice" @click="leftConfirmed = true">
         确认
@@ -21,20 +21,20 @@
         </div>
         <div class="name">{{ r.name }}</div>
       </div>
+      <div class="grid-footer">
+        <button class="primary" :disabled="!canStart" @click="start">开始战斗</button>
+        <button class="link" @click="back">返回</button>
+      </div>
     </div>
     <div class="side">
       <h3>{{ rightTitle }}</h3>
-      <div class="preview" v-if="rightChoice">
-        <CharacterPreview :name="rightChoice" :model="getModel(rightChoice)" />
+      <div class="preview">
+        <CharacterPreview :name="rightChoice || '未选择'" :model="getModel(rightChoice)" />
       </div>
       <button class="confirm" :disabled="!rightChoice" @click="rightConfirmed = true">
         确认
       </button>
     </div>
-  </div>
-  <div class="footer">
-    <button class="primary" :disabled="!canStart" @click="start">开始战斗</button>
-    <button class="link" @click="back">返回</button>
   </div>
 </template>
 
@@ -116,41 +116,73 @@ function setFilter(g: GameId | 'all') {
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 .select-page {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   gap: 12px;
   padding: 16px;
   align-items: start;
+  --panel-height: 600px;
 }
-.filters { grid-column: 1 / -1; display: flex; gap: 8px; justify-content: center; }
-.filters button { padding: 6px 12px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.06); color: #cde7ff; cursor: pointer; }
-.filters button.active { background: #7ccfff; color: #06111b; border-color: transparent; }
+
+.filters {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+
+  button {
+    padding: 6px 12px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.06);
+    color: #cde7ff;
+    cursor: pointer;
+
+    &.active {
+      background: #7ccfff;
+      color: #06111b;
+      border-color: transparent;
+    }
+  }
+}
+
 .side {
   background: rgba(255, 255, 255, 0.06);
   border-radius: 10px;
   padding: 12px;
-  min-height: 240px;
+  height: var(--panel-height);
   display: grid;
+  grid-template-rows: auto 1fr auto;
   gap: 12px;
-  align-content: start;
 }
+
 .preview {
-  /* 预览高度：底部距页面底部 ~ 页面高度的 1/8（估算扣除标题/按钮等高度） */
-  height: calc(100vh - (100vh / 8) - 180px);
-  min-height: 240px;
-  background: rgba(0, 0, 0, 0.35);
+  height: auto;
+  min-height: 0;
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   display: grid;
   place-items: center;
   color: #cde7ff;
 }
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  height: var(--panel-height);
+  overflow-y: auto;
+
+  // 隐藏垂直滚动条
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
+
 .card {
   background: rgba(255, 255, 255, 0.06);
   border-radius: 10px;
@@ -158,8 +190,23 @@ function setFilter(g: GameId | 'all') {
   cursor: pointer;
   text-align: center;
 }
-.avatar { width: 80%; margin: 0 auto 8px; aspect-ratio: 1 / 1; background: #0b1020; border-radius: 8px; overflow: hidden; }
-.avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.avatar {
+  width: 72%;
+  margin: 0 auto 8px;
+  aspect-ratio: 1 / 1;
+  background: #0b1020;
+  border-radius: 8px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
 .confirm {
   padding: 8px 12px;
   border-radius: 8px;
@@ -167,24 +214,33 @@ function setFilter(g: GameId | 'all') {
   background: #7ccfff;
   color: #06111b;
 }
-.footer {
+
+.grid-footer {
+  grid-column: 1 / -1;
+  position: sticky;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 8px;
   display: flex;
   gap: 12px;
   justify-content: center;
-  padding: 12px;
-}
-.primary {
-  padding: 10px 16px;
-  border-radius: 8px;
-  border: none;
-  background: #7ccfff;
-  color: #06111b;
-}
-.link {
-  background: transparent;
-  border: none;
-  color: #cde7ff;
-  text-decoration: underline;
+  padding: 10px 8px;
+
+  .primary {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    background: #7ccfff;
+    color: #06111b;
+  }
+
+  .link {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    background: #808080;
+    color: #ffffff;
+  }
 }
 </style>
 

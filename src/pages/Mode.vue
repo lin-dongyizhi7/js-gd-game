@@ -22,7 +22,7 @@ function back() {
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 .mode-page {
   height: 100%;
   width: 100%;
@@ -30,18 +30,21 @@ function back() {
   display: grid;
   place-items: center;
 }
+
 .panel {
   text-align: center;
   background: rgba(0, 0, 0, 0.35);
   padding: 24px 32px;
   border-radius: 12px;
 }
+
 .btns {
   display: flex;
   gap: 16px;
   justify-content: center;
   margin: 16px 0;
 }
+
 .big {
   font-size: 18px;
   padding: 14px 22px;
@@ -50,6 +53,7 @@ function back() {
   background: #7ccfff;
   color: #06111b;
 }
+
 .link {
   margin-top: 8px;
   background: transparent;

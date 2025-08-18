@@ -3,7 +3,7 @@
  * @Date: 2025-08-18 16:53:29
  * @LastEditors: 凛冬已至 2985956026@qq.com
  * @LastEditTime: 2025-08-18 17:47:23
- * @FilePath: \js-gd-game\src\pages\Game.vue
+ * @FilePath: \js-gd-game\src\Game.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
@@ -54,12 +54,13 @@ onBeforeUnmount(() => {
 });
 </script>
 
-<style scoped>
+<style scoped lang="less">
 .game-page {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
+
 .toolbar {
   padding: 8px 12px;
   display: flex;
@@ -67,6 +68,7 @@ onBeforeUnmount(() => {
   align-items: center;
   background: rgba(255, 255, 255, 0.06);
 }
+
 .viewport {
   flex: 1;
 }
