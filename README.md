@@ -19,41 +19,87 @@
   - pvp（本地双人对战）
 - 场景选择：`dojo` / `city` / `forest`（可扩展装饰）
 - 角色选择：`ninja` / `knight` / `mage`（含不同数值与特性）
+ - 角色选择：基于配置的角色池（原神 / 星穹铁道）可筛选与选择，左右两侧同时选择并实时显示 3D 模型预览
 - 角色能力：移动、跳跃、普攻（轻击）、重击、技能、终极技能（大招）
 - AI：简单追踪 + 随机出招的冷却逻辑（用于单人模式对手）
 - 面向对象架构：角色、工厂、输入、AI、场景、引擎模块化设计
 - 预留模型绑定：`Character.attachModel(model)` 可在后续替换几何体/动画
 
+UI 调整：
+- 角色选择页模型预览高度增大，底部保留约页面高度的 1/8 空间
+- 角色正方形头像尺寸缩小，卡片视觉更紧凑
+
 ## 目录结构（关键）
 
 ```
-gd-fight/
+js-gd-game/
   ├─ index.html
+  ├─ public/
+  │  ├─ avatars/
+  │  │  ├─ genshin/   # 原神角色头像
+  │  │  └─ starrail/  # 星穹铁道角色头像
+  │  └─ models/
+  │     ├─ genshin/   # 原神 glTF 模型
+  │     └─ starrail/  # 星穹铁道 glTF 模型
   ├─ src/
-  │  ├─ main.ts                 # 应用入口
-  │  ├─ App.vue                 # 根组件
+  │  ├─ main.ts
+  │  ├─ App.vue
   │  ├─ router/
-  │  │  └─ index.ts            # 路由（/ 与 /game）
+  │  │  └─ index.ts            # 路由（home / mode / select / game）
   │  ├─ pages/
-  │  │  ├─ Home.vue            # 选择模式/场景/角色
+  │  │  ├─ Home.vue
+  │  │  ├─ Mode.vue            # 模式选择
+  │  │  ├─ Select.vue          # 角色筛选与双侧选择，3D 模型预览
   │  │  └─ Game.vue            # three.js 视口与引擎启动
-  │  ├─ game/
-  │  │  ├─ types.ts            # 类型定义（模式/场景/角色/属性/输入）
-  │  │  └─ core/
-  │  │     ├─ GameEngine.ts    # 渲染循环、相机、场景/玩家装配、更新
-  │  │     ├─ Character.ts     # 角色实体（移动/跳跃/攻击/受击/大招）
-  │  │     ├─ CharacterFactory.ts  # 角色数值工厂
-  │  │     ├─ KeyboardInput.ts # 键盘输入适配（支持双人映射）
-  │  │     ├─ AIController.ts  # 简易AI（solo模式下控制对手）
-  │  │     └─ SceneFactory.ts  # 场景生成工厂
+  │  ├─ components/
+  │  │  └─ CharacterPreview.vue
+  │  └─ game/
+  │     ├─ config/
+  │     │  ├─ genshin.json     # 原神角色配置（含 charged_attack）
+  │     │  ├─ starrail.json    # 星穹铁道角色配置（含 charged_attack）
+  │     │  ├─ index.ts         # 角色列表聚合/检索
+  │     │  └─ types.ts         # 配置类型定义
+  │     ├─ core/
+  │     │  ├─ GameEngine.ts
+  │     │  ├─ Character.ts
+  │     │  ├─ CharacterFactory.ts
+  │     │  ├─ KeyboardInput.ts
+  │     │  ├─ AIController.ts
+  │     │  └─ SceneFactory.ts
+  │     └─ types.ts            # 运行期类型（键位/数值等）
   ├─ vite.config.ts
-  ├─ tsconfig.json / tsconfig.app.json
+  ├─ tsconfig.json / tsconfig.app.json / tsconfig.node.json
   └─ package.json
+```
+
+## 角色与资源配置
+
+- 配置位置：`src/game/config/genshin.json` 与 `src/game/config/starrail.json`
+- 资源路径规范：
+  - 原神：`avatar` 使用 `/avatars/genshin/<name>.png`，`model` 使用 `/models/genshin/<name>.glb`
+  - 星穹铁道：`avatar` 使用 `/avatars/starrail/<name>.png`，`model` 使用 `/models/starrail/<name>.glb`
+- 字段说明：`stats`、`passives`、`skills`；技能已统一支持 `charged_attack`（重击）
+
+示例（节选）：
+```json
+{
+  "game": "genshin",
+  "key": "raiden",
+  "name": "雷电将军",
+  "avatar": "/avatars/genshin/raiden.png",
+  "model": "/models/genshin/raiden.glb",
+  "stats": { "maxHp": 105, "attack": 13, "defense": 2, "moveSpeed": 0.14, "jumpPower": 4.8, "specialChargeMax": 120 },
+  "skills": [
+    { "key": "skill", "name": "神变·恶曜开眼", "description": "..." },
+    { "key": "ultimate", "name": "奥义·梦想真说", "description": "..." },
+    { "key": "charged_attack", "name": "重击", "description": "..." }
+  ]
+}
 ```
 
 ## 运行与构建
 
-在 `gd-fight` 目录执行：
+在 `js-gd-game` 目录执行：
 
 ```bash
 npm install
@@ -112,3 +158,11 @@ npm run preview
 ## 许可证
 
 仅用于学习与演示，可按需自定义添加许可证文本。
+
+## 更新记录（摘要）
+
+- 原神新增：刻晴、芙宁娜、玛薇卡、诺艾尔、魈、丝柯克、仆人；移除：钟离
+- 星穹铁道新增：黄泉（雷）、遐蝶（量子，技能消耗生命，被动范围 DoT）、卡芙卡、镜流、万敌
+- 资源路径按游戏分目录：`/avatars/genshin|starrail` 与 `/models/genshin|starrail`
+- 为两游戏的角色补充 `charged_attack`（重击）技能
+- 角色选择页 UI：模型预览高度增大（底部约留 1/8 屏幕），头像尺寸缩小
