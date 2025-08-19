@@ -5,19 +5,20 @@
 		"id": "sr-danheng",
 		"name": "丹恒",
 		"avatar": "/avatars/starrail/danheng.png",
-		"model": "/models/starrail/danheng.glb",
+		"model": "/models/starrail/danheng/丹恒.pmx",
 		"stats": {
 			"maxHp": 95,
 			"attack": 12,
 			"defense": 2,
 			"moveSpeed": 0.14,
 			"jumpPower": 5.0,
-			"specialChargeMax": 100
+			"specialChargeMax": 100,
+			"element": "Wind"
 		},
 		"passives": [
 			{
 				"key": "charge_gain_up",
-				"name": "破阵",
+				"name": "破敌锋芒",
 				"description": "攻击命中敌人后额外获取3点能量；对处于风元素影响下的敌人造成伤害时，额外获取2点能量"
 			}
 		],
@@ -29,12 +30,12 @@
 			},
 			{
 				"key": "ultimate",
-				"name": "天矛",
+				"name": "洞天幻化，长梦—觉",
 				"description": "消耗100点能量，释放风矛对单个敌人造成300%风元素伤害，若目标处于减速状态，伤害提升20%"
 			},
 			{
 				"key": "charged_attack",
-				"name": "疾风贯穿",
+				"name": "朔风",
 				"description": "短暂蓄力后突刺穿透直线上的敌人，造成200%风元素伤害；若目标处于减速状态，本次伤害提高25%"
 			}
 		]
@@ -45,14 +46,15 @@
 		"id": "sr-march7",
 		"name": "三月七",
 		"avatar": "/avatars/starrail/march7.png",
-		"model": "/models/starrail/march7.glb",
+		"model": "/models/starrail/march7/三月七.pmx",
 		"stats": {
 			"maxHp": 110,
 			"attack": 9,
 			"defense": 4,
 			"moveSpeed": 0.12,
 			"jumpPower": 4.6,
-			"specialChargeMax": 100
+			"specialChargeMax": 100,
+			"element": "Ice"
 		},
 		"passives": [
 			{
@@ -64,17 +66,17 @@
 		"skills": [
 			{
 				"key": "skill",
-				"name": "冻结屏障",
-				"description": "消耗3点能量，为指定队友生成吸收20%目标最大生命值的冰元素护盾，持续5秒，护盾存在时使目标受到的伤害降低10%"
+				"name": " 可爱即是正义",
+				"description": "消耗3点能量，为自己生成吸收20%目标最大生命值的冰元素护盾，持续5秒，护盾存在时使自身受到的伤害降低10%"
 			},
 			{
 				"key": "ultimate",
-				"name": "全域冻结",
+				"name": "冰刻箭雨之时",
 				"description": "消耗100点能量，对范围内所有敌人造成150%冰元素伤害，有30%概率使目标冻结1.5秒，同时为全队生成吸收10%最大生命值的冰元素护盾"
 			},
 			{
 				"key": "charged_attack",
-				"name": "霜星蓄能",
+				"name": "极寒的弓矢",
 				"description": "蓄力发射霜晶箭，对单体造成190%冰元素伤害；若命中时自身拥有护盾，则额外使目标减速20%，持续2秒"
 			}
 		]
@@ -85,37 +87,38 @@
 		"id": "sr-huangquan",
 		"name": "黄泉",
 		"avatar": "/avatars/starrail/huangquan.png",
-		"model": "/models/starrail/huangquan.glb",
+		"model": "/models/starrail/huangquan/黄泉.pmx",
 		"stats": {
 			"maxHp": 100,
 			"attack": 15,
 			"defense": 2,
 			"moveSpeed": 0.15,
 			"jumpPower": 5.2,
-			"specialChargeMax": 120
+			"specialChargeMax": 120,
+			"element": "Electro"
 		},
 		"passives": [
 			{
 				"key": "crit_damage_up",
-				"name": "幽冥裁决",
+				"name": "红叶时雨，万倾一空",
 				"description": "对生命值低于50%的敌人，暴击伤害提升30%"
 			}
 		],
 		"skills": [
 			{
 				"key": "skill",
-				"name": "黄泉引渡",
-				"description": "消耗4点能量，对单个敌人造成200%雷元素伤害，命中后附加「幽冥标记」，持续4秒，标记期间目标受到的雷元素伤害提升15%"
+				"name": "八雷飞渡",
+				"description": "消耗4点能量，对单个敌人造成200%雷元素伤害，命中后附加「集真赤」，持续4秒，标记期间目标受到的雷元素伤害提升15%"
 			},
 			{
 				"key": "ultimate",
-				"name": "万魂寂灭",
-				"description": "消耗120点能量，对目标敌人造成5段共400%雷元素伤害，若目标带有「幽冥标记」，则最后一段伤害额外提升50%"
+				"name": "残梦尽染，一刀缭断",
+				"description": "消耗120点能量，对目标敌人造成5段共400%雷元素伤害，若目标带有「集真赤」，则最后一段伤害额外提升50%"
 			},
 			{
 				"key": "charged_attack",
-				"name": "冥河断绝",
-				"description": "蓄力斩击，对单体造成220%雷元素伤害；若目标带有「幽冥标记」，本次伤害额外提高30%"
+				"name": "四相断我",
+				"description": "蓄力斩击，对单体造成220%雷元素伤害；若目标带有「集真赤」，本次伤害额外提高30%"
 			}
 		]
 	},
@@ -125,36 +128,37 @@
 		"id": "sr-xiadie",
 		"name": "遐蝶",
 		"avatar": "/avatars/starrail/xiadie.png",
-		"model": "/models/starrail/xiadie.glb",
+		"model": "/models/starrail/xiadie/遐蝶.pmx",
 		"stats": {
 			"maxHp": 95,
 			"attack": 12,
 			"defense": 2,
 			"moveSpeed": 0.16,
 			"jumpPower": 5.0,
-			"specialChargeMax": 110
+			"specialChargeMax": 110,
+			"element": "Quantum"
 		},
 		"passives": [
 			{
 				"key": "quantum_aura",
-				"name": "量子花雾",
+				"name": "悲鸣，赐死之先声",
 				"description": "以自身为中心半径4米的范围内敌人每秒受到30%量子元素伤害的持续伤害"
 			}
 		],
 		"skills": [
 			{
 				"key": "skill",
-				"name": "量子花粉",
+				"name": "缄默，幽蝶之轻抚",
 				"description": "消耗自身10%最大生命值并消耗2点能量，对范围内敌人造成120%量子元素伤害，施加「量缚」效果，使目标攻击速度降低15%，持续3秒"
 			},
 			{
 				"key": "ultimate",
-				"name": "百蝶穿花",
+				"name": "遗世冥域",
 				"description": "消耗自身20%最大生命值并消耗110点能量，对范围内所有敌人造成250%量子元素伤害，同时为全队附加「量跃」效果，提升10%攻击力，持续4秒"
 			},
 			{
 				"key": "charged_attack",
-				"name": "量子蝶舞",
+				"name": "哀悼，死海之涟漪",
 				"description": "消耗自身5%最大生命值，原地短暂蓄力后旋转起舞，对周围造成连续量子元素伤害，合计180%；若命中2名及以上敌人，为自身提供8%移动速度，持续3秒"
 			}
 		]
@@ -165,14 +169,15 @@
 		"id": "sr-kafuka",
 		"name": "卡芙卡",
 		"avatar": "/avatars/starrail/kafka.png",
-		"model": "/models/starrail/kafka.glb",
+		"model": "/models/starrail/kafka/卡芙卡.pmx",
 		"stats": {
 			"maxHp": 98,
 			"attack": 14,
 			"defense": 2,
 			"moveSpeed": 0.14,
 			"jumpPower": 4.8,
-			"specialChargeMax": 120
+			"specialChargeMax": 120,
+			"element": "Lightning"
 		},
 		"passives": [
 			{
@@ -205,14 +210,15 @@
 		"id": "sr-jingliu",
 		"name": "镜流",
 		"avatar": "/avatars/starrail/jingliu.png",
-		"model": "/models/starrail/jingliu.glb",
+		"model": "/models/starrail/jingliu/镜流.pmx",
 		"stats": {
 			"maxHp": 110,
 			"attack": 13,
 			"defense": 3,
 			"moveSpeed": 0.13,
 			"jumpPower": 4.9,
-			"specialChargeMax": 100
+			"specialChargeMax": 100,
+			"element": "Ice"
 		},
 		"passives": [
 			{
@@ -224,17 +230,17 @@
 		"skills": [
 			{
 				"key": "skill",
-				"name": "裂冰刺",
+				"name": "昙华生灭，天河泻梦",
 				"description": "消耗3点能量，对单个敌人造成210%冰元素伤害，有50%概率使目标「冻伤」，每3秒受到30%冰元素伤害，持续5秒"
 			},
 			{
 				"key": "ultimate",
-				"name": "剑出无尘",
+				"name": "澹月转魄",
 				"description": "消耗100点能量，进入「剑出无尘」状态，持续8秒，期间普通攻击变为范围伤害，造成150%冰元素伤害，技能冷却时间缩短30%"
 			},
 			{
 				"key": "charged_attack",
-				"name": "霜裂蓄锋",
+				"name": "寒川映月",
 				"description": "蓄力斩击，对前方造成220%冰元素伤害；若处于「剑出无尘」状态，本次伤害额外提高25%"
 			}
 		]
@@ -245,14 +251,15 @@
 		"id": "sr-wandi",
 		"name": "万敌",
 		"avatar": "/avatars/starrail/wandi.png",
-		"model": "/models/starrail/wandi.glb",
+		"model": "/models/starrail/wandi/万敌.pmx",
 		"stats": {
 			"maxHp": 102,
 			"attack": 15,
 			"defense": 2,
 			"moveSpeed": 0.15,
 			"jumpPower": 5.1,
-			"specialChargeMax": 120
+			"specialChargeMax": 120,
+			"element": "Physical"
 		},
 		"passives": [
 			{
@@ -264,12 +271,12 @@
 		"skills": [
 			{
 				"key": "skill",
-				"name": "万夫莫当",
+				"name": "万死无悔",
 				"description": "消耗4点能量，对范围内所有敌人造成180%物理伤害，降低目标10%防御力，持续3秒"
 			},
 			{
 				"key": "ultimate",
-				"name": "破阵斩",
+				"name": "诛天焚骨的王座",
 				"description": "消耗120点能量，对单个目标造成450%物理伤害，若目标防御力被降低，额外造成150%物理伤害"
 			},
 			{

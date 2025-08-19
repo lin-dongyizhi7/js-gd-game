@@ -5,14 +5,15 @@
 		"id": "gs-hutao",
 		"name": "胡桃",
 		"avatar": "/avatars/genshin/hutao.png",
-		"model": "/models/genshin/hutao.glb",
+		"model": "/models/genshin/hutao/胡桃-海灯节.pmx",
 		"stats": {
 			"maxHp": 100,
 			"attack": 14,
 			"defense": 1,
 			"moveSpeed": 0.14,
 			"jumpPower": 5.0,
-			"specialChargeMax": 100
+			"specialChargeMax": 100,
+			"element": "Pyro"
 		},
 		"passives": [
 			{
@@ -45,14 +46,15 @@
 		"id": "gs-raiden",
 		"name": "雷电将军",
 		"avatar": "/avatars/genshin/raiden.png",
-		"model": "/models/genshin/raiden.glb",
+		"model": "/models/genshin/raiden/雷电将军.pmx",
 		"stats": {
 			"maxHp": 105,
 			"attack": 13,
 			"defense": 2,
 			"moveSpeed": 0.14,
 			"jumpPower": 4.8,
-			"specialChargeMax": 120
+			"specialChargeMax": 120,
+			"element": "Electro"
 		},
 		"passives": [
 			{
@@ -85,14 +87,15 @@
 		"id": "gs-keqing",
 		"name": "刻晴",
 		"avatar": "/avatars/genshin/keqing.png",
-		"model": "/models/genshin/keqing.glb",
+		"model": "/models/genshin/keqing/刻晴.pmx",
 		"stats": {
 			"maxHp": 98,
 			"attack": 13,
 			"defense": 2,
 			"moveSpeed": 0.16,
 			"jumpPower": 5.2,
-			"specialChargeMax": 100
+			"specialChargeMax": 100,
+			"element": "Electro"
 		},
 		"passives": [
 			{
@@ -125,14 +128,16 @@
 		"id": "gs-furina",
 		"name": "芙宁娜",
 		"avatar": "/avatars/genshin/furina.png",
-		"model": "/models/genshin/furina.glb",
+		"model": "/models/genshin/furina/芙宁娜.pmx",
+		"model2": "/models/genshin/furina/芙宁娜-荒.pmx",
 		"stats": {
 			"maxHp": 102,
 			"attack": 12,
 			"defense": 2,
 			"moveSpeed": 0.13,
 			"jumpPower": 4.9,
-			"specialChargeMax": 130
+			"specialChargeMax": 130,
+			"element": "Hydro"
 		},
 		"passives": [
 			{
@@ -165,14 +170,15 @@
 		"id": "gs-mavuika",
 		"name": "玛薇卡",
 		"avatar": "/avatars/genshin/mavuika.png",
-		"model": "/models/genshin/mavuika.glb",
+		"model": "/models/genshin/mavuika/玛薇卡.pmx",
 		"stats": {
 			"maxHp": 120,
 			"attack": 11,
 			"defense": 3,
 			"moveSpeed": 0.12,
 			"jumpPower": 4.6,
-			"specialChargeMax": 100
+			"specialChargeMax": 100,
+			"element": "Pyro"
 		},
 		"passives": [
 			{
@@ -205,14 +211,15 @@
 		"id": "gs-noelle",
 		"name": "诺艾尔",
 		"avatar": "/avatars/genshin/noelle.png",
-		"model": "/models/genshin/noelle.glb",
+		"model": "/models/genshin/noelle/诺艾尔.pmx",
 		"stats": {
 			"maxHp": 135,
 			"attack": 10,
 			"defense": 5,
 			"moveSpeed": 0.11,
 			"jumpPower": 4.4,
-			"specialChargeMax": 100
+			"specialChargeMax": 100,
+			"element": "Geo"
 		},
 		"passives": [
 			{
@@ -245,14 +252,15 @@
 		"id": "gs-xiao",
 		"name": "魈",
 		"avatar": "/avatars/genshin/xiao.png",
-		"model": "/models/genshin/xiao.glb",
+		"model": "/models/genshin/xiao/魈.pmx",
 		"stats": {
 			"maxHp": 96,
 			"attack": 15,
 			"defense": 1,
 			"moveSpeed": 0.16,
 			"jumpPower": 5.4,
-			"specialChargeMax": 120
+			"specialChargeMax": 120,
+			"element": "Wind"
 		},
 		"passives": [
 			{
@@ -285,14 +293,15 @@
 		"id": "gs-skirk",
 		"name": "丝柯克",
 		"avatar": "/avatars/genshin/skirk.png",
-		"model": "/models/genshin/skirk.glb",
+		"model": "/models/genshin/skirk/丝柯克.pmx",
 		"stats": {
 			"maxHp": 101,
 			"attack": 14,
 			"defense": 2,
 			"moveSpeed": 0.15,
 			"jumpPower": 5.0,
-			"specialChargeMax": 110
+			"specialChargeMax": 110,
+			"element": "Ice"
 		},
 		"passives": [
 			{
@@ -310,7 +319,7 @@
 			{
 				"key": "ultimate",
 				"name": "深渊降临",
-				"description": "召唤深渊能量爆发，对大范围敌人造成持续冰霜与暗影伤害"
+				"description": "召唤深渊能量爆发，对大范围敌人造成持续冰霜伤害"
 			},
 			{
 				"key": "charged_attack",
@@ -325,14 +334,15 @@
 		"id": "gs-arlecchino",
 		"name": "仆人",
 		"avatar": "/avatars/genshin/arlecchino.png",
-		"model": "/models/genshin/arlecchino.glb",
+		"model": "/models/genshin/arlecchino/仆人.pmx",
 		"stats": {
 			"maxHp": 108,
 			"attack": 14,
 			"defense": 2,
 			"moveSpeed": 0.14,
 			"jumpPower": 4.9,
-			"specialChargeMax": 120
+			"specialChargeMax": 120,
+			"element": "Pyro"
 		},
 		"passives": [
 			{

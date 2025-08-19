@@ -10,7 +10,11 @@
       <div class="preview">
         <CharacterPreview :name="leftChoice || '未选择'" :model="getModel(leftChoice)" />
       </div>
-      <button class="confirm" :disabled="!leftChoice" @click="leftConfirmed = true">
+      <button
+        v-if="leftChoice && !leftConfirmed"
+        class="confirm"
+        @click="leftConfirmed = true"
+      >
         确认
       </button>
     </div>
@@ -31,7 +35,11 @@
       <div class="preview">
         <CharacterPreview :name="rightChoice || '未选择'" :model="getModel(rightChoice)" />
       </div>
-      <button class="confirm" :disabled="!rightChoice" @click="rightConfirmed = true">
+      <button
+        v-if="rightChoice && !rightConfirmed && leftConfirmed"
+        class="confirm"
+        @click="rightConfirmed = true"
+      >
         确认
       </button>
     </div>
@@ -71,10 +79,12 @@ const canStart = computed(
 
 function pick(key: string) {
   if (!leftConfirmed.value) {
+    // 选择玩家一
     leftChoice.value = key;
     return;
   }
-  if (!rightConfirmed.value) {
+  if (!rightConfirmed.value && leftConfirmed.value) {
+    // 玩家一确认后才能选择玩家二
     rightChoice.value = key;
     return;
   }
@@ -124,6 +134,8 @@ function setFilter(g: GameId | 'all') {
   padding: 16px;
   align-items: start;
   --panel-height: 600px;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .filters {
@@ -174,6 +186,7 @@ function setFilter(g: GameId | 'all') {
   gap: 10px;
   height: var(--panel-height);
   overflow-y: auto;
+  position: relative;
 
   // 隐藏垂直滚动条
   &::-webkit-scrollbar {
